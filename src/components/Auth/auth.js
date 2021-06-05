@@ -7,7 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function auth() {
   return (
     <>
-    {/* <Button variant="warning">Warning</Button> */}
     <Button variant="outline-warning">Signup</Button>
     <Button variant="outline-warning">Signin</Button>
       {/* <div>Signin / Signup / Google Auth button</div> */}

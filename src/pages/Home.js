@@ -12,6 +12,7 @@ function Home() {
     <>
       <Header />
       <main>
+        
         <Landscape />
         <Leaderboard />
         <Vs />
