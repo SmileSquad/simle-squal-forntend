@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import fb from '../../assets/fb.png'
 import tw from '../../assets/tw.png'
 import google from '../../assets/google.png'
@@ -26,19 +26,13 @@ function footer() {
     <div>
       <ul className="socialMedia">
         <li>
-          <NavLink to="/">
-            <img src={fb} />
-          </NavLink>
+          <a href={`https://www.facebook.com/`}><img src={fb} /> </a>
         </li>
         <li>
-          <NavLink to="/">
-            <img src={google} />
-          </NavLink>
+          <a href={`https://www.google.com/`}><img src={google} /> </a>
         </li>
         <li>
-          <NavLink to="/">
-            <img src={tw} />
-          </NavLink>
+          <a href={`https://www.twitter.com/`}><img src={tw} /> </a>
         </li>
       </ul>
     </div>
