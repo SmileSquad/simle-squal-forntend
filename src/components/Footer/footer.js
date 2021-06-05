@@ -10,8 +10,9 @@ import './footer.scss';
 // see the wireframe
 
 function footer() {
-  return <div className="footer">
-    <div>
+  return (
+  <div className="foot">
+    <div className="footer">
       <ul className="footerUl">
         <li>
           <NavLink exact to="/">
@@ -23,7 +24,13 @@ function footer() {
         </li>
       </ul>
     </div>
-    <div>
+   
+    <div className="discretion">
+      <p >
+        an exciting game to make people smile and making communication easier by play with each other and make new friend
+    </p>
+    </div>
+     <div>
       <ul className="socialMedia">
         <li>
           <a href={`https://www.facebook.com/`}><img src={fb} /> </a>
@@ -36,12 +43,8 @@ function footer() {
         </li>
       </ul>
     </div>
-    <div className="discretion">
-      <p >
-        an exciting game to make people smile and making communication easier by play with each other and make new friend
-    </p>
-    </div>
   </div>
+  )
 }
 
 

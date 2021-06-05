@@ -4,7 +4,11 @@
     margin:0;
     font-family: 'Trocchi', serif;
 }
-
+.foot{
+  position: relative;
+  bottom: 0px;
+  height: 450px;
+}
 .footer{
     padding: 5px;
     position: absolute;
@@ -32,11 +36,17 @@
     
     }
   }
-
+  .discretion{
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 15%;
+    width:25%;
+  }
   .socialMedia {
-    margin-top: 160px;
+position: absolute;
+    margin-top: 29%;
     // line-height: 15px;
-    margin-left: 125px;
+    margin-left: 7%;
       li {
         list-style: none;
         display: inline-block;
@@ -51,8 +61,4 @@
       }
     }
 
-    .discretion{
-      margin-top: -265px;
-      margin-left: 190px;
-      width:25%;
-    }
+   

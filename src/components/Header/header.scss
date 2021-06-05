@@ -26,23 +26,28 @@
     align-items: center;
     justify-items: left;
     h4 {
-      margin-left: -60px;
+      font-size: 20px;
+      margin-left: -50px;
+      margin-top: 5px;
       color: #f5b201;
     }
   }
   ul {
+    margin-top: 10px;
+
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items:baseline;
     justify-items: center;
     margin-left: -20px;
     li {
-        
+
       list-style: none;
       a{
         //   line-height: 60px;
         color: #9e9d9d;
         text-decoration: none;
+
       }
     
       .active {

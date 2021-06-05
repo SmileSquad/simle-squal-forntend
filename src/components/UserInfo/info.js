@@ -4,7 +4,14 @@ import React from 'react';
 // get user data fromt the server handled by redux
 
 function info() {
-  return <div>user avatar// and info see the wireframe</div>;
+  return ( 
+  <>
+   <div>user avatar// and info see the wireframe</div>
+   <div>user avatar// and info see the wireframe</div>
+   <div>user avatar// and info see the wireframe</div>
+   <div>user avatar// and info see the wireframe</div>
+   </>
+)
 }
 
 export default info;

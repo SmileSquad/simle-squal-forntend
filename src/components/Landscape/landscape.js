@@ -10,7 +10,7 @@ const font =  "'Trocchi', serif";
 // landscape video or slide show
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '110%',
+    width: '100%',
     height: '90vh',
     position: 'relative',
     '& video': {
@@ -29,9 +29,9 @@ const useStyles = makeStyles(theme => ({
     color:'#f5b201',
     paddingBottom: theme.spacing(0),
     paddingTop: theme.spacing(30),
-    paddingLeft: theme.spacing(50),
+    paddingLeft: theme.spacing(70),
     fontFamily: font,
-    fontSize: 50,
+    fontSize: 40,
     
   },
 }));
@@ -66,6 +66,8 @@ function Landscape() {
         </Box>
       </div>
     </section>
+    
+
 </>
   );
 }

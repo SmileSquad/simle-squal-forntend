@@ -9,18 +9,18 @@ import Footer from '../components/Footer/footer.js';
 
 function Home() {
   return (
-    <>
+    <div className="body" style={{position:'relative'}}>
       <Header />
       <main>
-        
         <Landscape />
         <Leaderboard />
         <Vs />
         <Instruction />
         <Contact />
       </main>
+
       <Footer />
-    </>
+    </div>
   );
 }
 
