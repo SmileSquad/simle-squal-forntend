@@ -1,37 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Trocchi&display=swap');
-*{
-    margin:0;
-    font-family: 'Trocchi', serif;
+@import url("https://fonts.googleapis.com/css2?family=Trocchi&display=swap");
+* {
+  margin: 0;
+  font-family: "Trocchi", serif;
 }
-.logo{
-    width:60px;
-    height: 60px;
+.logo {
+  width: 60px;
+  height: 60px;
+  margin-left: -20px;
 }
-.header{
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: center;
-    justify-items: center;
-    height: 60px;
-    background-color: #0f0f0f;
-    color:#9e9d9d;
-    div{
-        display:grid;
+.header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  height: 70px;
+  background-color: #0f0f0f;
+  color: #9e9d9d;
+  div {
+    display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-items: left;
-        h2{
-            color:#f5b201;
-        }
+    h3 {
+      margin-left: -60px;
+      color: #f5b201;
     }
-    ul{
-        display:grid;
+  }
+  ul {
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-items: center;
-        li{
-            // display: inline-block;
-        }
+    margin-left: -20px;
+    li {
+        
+      list-style: none;
+      a{
+        //   line-height: 60px;
+        color: #9e9d9d;
+        text-decoration: none;
+      }
+    
+      .active {
+        color: #f5b201;
+      }
     }
-
+  }
+  .auth{
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items:right;
+    margin-left: 200px;
+    button{
+        margin-left:10px;
+        width:70px;
+        height:40px;
+        font-size: 15px;
+        color: #9e9d9d;
+    }
+  }
 }

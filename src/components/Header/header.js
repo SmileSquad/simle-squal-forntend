@@ -13,7 +13,7 @@ function header() {
     <div className="header">
       <div>
         <img className="logo" src={logo} alt='logo' />
-        <h2>SMILE SQUAD</h2>
+        <h3>SMILE SQUAD</h3>
       </div>
       <ul>
         <li>
@@ -28,7 +28,10 @@ function header() {
           <NavLink to="/About">About us</NavLink>
         </li>
       </ul>
+      <div className ="auth">
+
       <Auth />
+      </div>
     </div>
   );
 }
