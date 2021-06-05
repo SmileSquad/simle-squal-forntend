@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Trocchi&display=swap');
+
+*{
+    margin:0;
+    font-family: 'Trocchi', serif;
+}
+
+.footer{
+    padding: 5px;
+    // position: absolute;
+    width: 100%;
+    bottom: 0px;
+    height: 450px;
+    background: url("../../assets/footer.png");
+}             
+
+.footerUl {
+  text-align: center;
+  margin-top: 160px;
+  padding: 0;
+
+    li {
+      list-style: none;
+      display: inline-block;
+      font-size: 20px;
+      padding: 20px;
+
+      a{
+        color: #000000;
+        text-decoration: none;
+      }
+    
+    }
+  }
+
+  .socialMedia {
+    margin-top: 160px;
+    // line-height: 15px;
+    margin-left: 125px;
+      li {
+        list-style: none;
+        display: inline-block;
+        font-size: 20px;
+        padding: 3px;
+  
+        a {
+          color: #000000;
+          text-decoration: none;
+        }
+      
+      }
+    }
+
+    .discretion{
+      margin-top: -265px;
+      margin-left: 190px;
+      width:25%;
+    }
