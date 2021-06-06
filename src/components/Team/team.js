@@ -11,26 +11,36 @@ import bahaa from '../../assets/bahaa.png'
 
 function team() {
   return (
-    <div className="aboutUs" >
+    <div className="team">
+      <h2 className="h22">Our Team</h2>
+      <div className="aboutUs" >
 
-      <div className="aboutUs2">
-        <div>
-          <img src={ayoub} />
+        <div className="aboutUs2">
+          <div>
+            <img src={ayoub} alt='ayoub'/>
+            <h5>Ayoub Kandah</h5>
+          </div>
+          <div>
+            <img src={omar} alt='omar'/>
+            <h5>Omar Al-Tarawneh</h5>
+          </div>
+          <div>
+            <img src={bahaa} alt='bahaa'/>
+            <h5>Bahaa Al-Zghayar</h5>
+          </div>
         </div>
-        <div>
-          <img src={omar} />
-        </div>
-        <div>
-          <img src={bahaa} />
-        </div>
-      </div>
 
-      <div className="aboutUs2">
-        <div>
-          <img src={faten} />
-        </div>
-        <div>
-          <img src={raghad} />
+        <div className="aboutUs2">
+          <div>
+            <img src={faten} alt='faten' />
+            <h5>Faten Samman</h5>
+
+          </div>
+          <div>
+            <img src={raghad} alt='raghad' />
+            <h5>Raghad Mustafa</h5>
+
+          </div>
         </div>
       </div>
     </div>

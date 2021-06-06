@@ -15,10 +15,10 @@
     }
     p {
       margin: 25px;
-      margin-left: 500px;
+      margin-left: 25%;
       color: #9e9d9d;
-      font-size: 15px;
-      width: 25%;
+      font-size: 20px;
+      width: 50%;
     }
   }
   .points {
@@ -27,7 +27,7 @@
     display: grid;
     grid-template-rows: repeat(4, 1fr);
     align-items: center;
-    justify-items: center;
+    justify-items: left;
     .point {
       p {
         float: right;
@@ -37,7 +37,7 @@
       }
       img {
         position: absolute;
-        left: 20%;
+        left: 17%;
         width: 50px;
       }
     }

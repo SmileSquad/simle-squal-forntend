@@ -1,9 +1,18 @@
+
 .foot {
+  display: grid;
+  grid-template-rows: 4fr 1fr;
+  justify-items: center;
+  align-items:end;
   position: relative;
   bottom: 0px;
   height: 450px;
 }
 .footer {
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  justify-items: center;
+  align-items:center;
   padding: 5px;
   position: absolute;
   width: 100%;
@@ -30,16 +39,14 @@
   }
 }
 .discretion {
-  position: absolute;
-  margin-top: 15%;
-  margin-left: 15%;
-  width: 25%;
+  margin-top: 12%;
+  margin-left: 10%;
+  width: 50%;
 }
 .socialMedia {
   position: absolute;
-  margin-top: 29%;
-  // line-height: 15px;
-  margin-left: 7%;
+  margin-top:2.5%;
+  margin-left:-39%;
   li {
     list-style: none;
     display: inline-block;
