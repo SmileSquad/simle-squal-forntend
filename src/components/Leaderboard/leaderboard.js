@@ -14,7 +14,7 @@ function leaderboard() {
         <p> Be One of Our Top  Players</p>
       </div>
       <div className="cards">
-       
+
         <Card className="bg-dark text-white">
           <Card.Img src={leaderimg} alt="Card image" />
           <Card.ImgOverlay>

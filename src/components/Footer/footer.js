@@ -11,39 +11,39 @@ import './footer.scss';
 
 function footer() {
   return (
-  <div className="foot">
-    <div className="footer">
-      <ul className="footerUl">
-        <li>
-          <NavLink exact to="/">
-            Home
+    <div className="foot">
+      <div className="footer">
+        <ul className="footerUl">
+          <li>
+            <NavLink exact to="/">
+              Home
           </NavLink>
-        </li>
-        <li>
-          <NavLink to="/About">ABout</NavLink>
-        </li>
-      </ul>
-    </div>
-   
-    <div className="discretion">
-      <p >
-        an exciting game to make people smile and making communication easier by play with each other and make new friend
+          </li>
+          <li>
+            <NavLink to="/About">ABout</NavLink>
+          </li>
+        </ul>
+      </div>
+
+      <div className="discretion">
+        <p >
+          an exciting game to make people smile and making communication easier by play with each other and make new friend
     </p>
+      </div>
+      <div>
+        <ul className="socialMedia">
+          <li>
+            <a href={`https://www.facebook.com/`}><img src={fb} /> </a>
+          </li>
+          <li>
+            <a href={`https://www.google.com/`}><img src={google} /> </a>
+          </li>
+          <li>
+            <a href={`https://www.twitter.com/`}><img src={tw} /> </a>
+          </li>
+        </ul>
+      </div>
     </div>
-     <div>
-      <ul className="socialMedia">
-        <li>
-          <a href={`https://www.facebook.com/`}><img src={fb} /> </a>
-        </li>
-        <li>
-          <a href={`https://www.google.com/`}><img src={google} /> </a>
-        </li>
-        <li>
-          <a href={`https://www.twitter.com/`}><img src={tw} /> </a>
-        </li>
-      </ul>
-    </div>
-  </div>
   )
 }
 

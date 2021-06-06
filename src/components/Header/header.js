@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import Auth from '../Auth/auth.js';
 import './header.scss';
 import logo from '../../assets/yellowlogo.png'
-// import '../../../public/assets/yellowlogo.png'
 // Header
 // Goes into all pages
 // the auth should be included
@@ -28,9 +27,9 @@ function header() {
           <NavLink to="/About">About us</NavLink>
         </li>
       </ul>
-      <div className ="auth">
+      <div className="auth">
 
-      <Auth />
+        <Auth />
       </div>
     </div>
   );
