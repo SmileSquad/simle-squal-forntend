@@ -1,0 +1,52 @@
+.contact_1 {
+  position: relative;
+  bottom: 0px;
+  height: 650px;
+}
+
+.contact_2 {
+  padding: 5px;
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  height: 650px;
+  background: url("../../assets/all.png");
+}
+
+.contactH2 {
+  position: absolute;
+  font-size: 30px;
+  margin-left: 45%;
+  margin-top: 18%;
+  color: #f5b201;
+}
+
+.floating-label > input {
+  height: 150px;
+}
+
+.input1::placeholder {
+  color: #000000;
+  opacity: 1;
+}
+
+.info {
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 18%;
+  li {
+    list-style: none;
+    display: inline-block;
+    font-size: 20px;
+    padding: 3px;
+    margin-right: 50px;
+  }
+}
+
+.buttonC {
+  position: absolute;
+  width: 150px;
+  margin-left: 46%;
+  margin-right: 50%;
+  margin-top:60px;
+}
