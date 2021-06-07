@@ -1,6 +1,8 @@
 import React from 'react';
 import './leaderboard.scss';
 import Card from 'react-bootstrap/Card';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import leaderimg from '../../assets/cardL.png'
 
 // Home Page

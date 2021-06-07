@@ -55,7 +55,7 @@ function footer() {
                   className='input1'
                   as="textarea"
                   placeholder="Your Message"
-                  style={{ height: '140px' }}
+                  style={{ height: '150px' }}
                 />
               </Form>
             </Form>
