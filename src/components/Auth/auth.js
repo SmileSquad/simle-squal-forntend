@@ -72,8 +72,10 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: '#0f0f0f',
       color: theme.palette.warning.main,
       border: '1px solid #f5b201',
+    margin: theme.spacing(0, 0, 2),
+
     },
-    margin: theme.spacing(3, 0, 2),
+    margin: theme.spacing(0, 0, 2),
     backgroundColor: theme.palette.warning.main,
     fontSize: 15,
     fontWeight: 'bold',
@@ -86,6 +88,7 @@ const useStyles = makeStyles((theme) => ({
       border: '1px solid #f5b201',
     },
     backgroundColor: theme.palette.warning.main,
+
   },
 
   Typography: {
