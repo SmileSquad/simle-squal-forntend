@@ -1,12 +1,16 @@
 import { useState } from 'react';
 
-const useForm = (callbackSubmit, action) => {
+const useForm = (callbackSubmit, action, token = null, id = null) => {
   const [item, setItem] = useState({});
   const handleInputChange = (e) => {
     setItem({ ...item, [e.target.name]: e.target.value });
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (token && id) {
+      item['token'] = token;
+      item['userId'] = id;
+    }
     e.target.reset();
     console.log(item);
     callbackSubmit(action(item));

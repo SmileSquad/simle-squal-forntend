@@ -17,7 +17,6 @@ function Login() {
       .send({ token: res.tokenId });
     dispatch(login(data.body));
     history.push('/profile');
-    console.log('data', data.body.token);
   };
 
   const onFailure = (res) => {

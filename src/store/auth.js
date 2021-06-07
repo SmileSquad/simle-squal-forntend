@@ -46,7 +46,6 @@ export const signup =
       const response = await superagent
         .post(`${API}/signup`)
         .send({ username, email, password });
-      console.log('body', response.body);
       dispatch(login(response.body));
     } catch (error) {
       console.error(error.message);

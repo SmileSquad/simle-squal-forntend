@@ -14,9 +14,9 @@ function Profile() {
       <Header />
       <main>
         <Info />
-        <Friends />
         <Search />
         <Posts />
+        <Friends />
         <Chat />
         <Start />
       </main>
