@@ -7,11 +7,17 @@ import Search from '../components/Search/search.js';
 import Posts from '../components/Posts/posts.js';
 import Chat from '../components/Chat/chat.js';
 import Start from '../components/Start/start.js';
-
+import { useSelector } from 'react-redux';
 function Profile() {
+  const state = useSelector((state) => {
+    return {
+      user: state.auth,
+    };
+  });
   return (
     <>
       <Header />
+      {console.log('user', state)}
       <main>
         <Info />
         <Friends />
