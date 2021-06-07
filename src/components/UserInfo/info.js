@@ -9,6 +9,7 @@ function Info() {
   });
   return (
     <>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque architecto suscipit, nulla tempore voluptatum ea facilis quae amet sit quibusdam natus, omnis dolorum vero dolores blanditiis provident quia soluta harum.  </p>
       <img src={state.user.imgUrl} alt="user" />
       <div>{state.user.username}</div>
       <div>Game Played: {state.user.gamePlayed}</div>
