@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Auth from '../Auth/auth.js';
+import Auth from '../Auth/auth';
 // Header
 // Goes into all pages
 // the auth should be included
