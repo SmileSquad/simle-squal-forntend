@@ -16,7 +16,7 @@ function Home() {
         <Vs />
         <Instruction />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }

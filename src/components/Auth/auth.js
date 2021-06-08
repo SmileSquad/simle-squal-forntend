@@ -18,23 +18,23 @@ function Auth() {
   const dispatch = useDispatch();
   const state = useSelector((state) => {
     return {
-        user: state.auth,
+      user: state.auth,
     };
- });
+  });
 
- useEffect(() => {
-  const token = cookie.load('auth');
-  if (token) {
+  useEffect(() => {
+    const token = cookie.load('auth');
+    if (token) {
       const user = jwt.verify(token, SECRET);
       dispatch(login({ user, token }));
-  }
-  // eslint-disable-next-line
-}, []);
+    }
+    // eslint-disable-next-line
+  }, []);
 
-const history = useHistory();
-    const { loggedIn } = state.user;
-    const [, handleChange, handleSubmit] = useForm(dispatch, signin);
-    const classes = useStyles();
+  const history = useHistory();
+  const { loggedIn } = state.user;
+  const [, handleChange, handleSubmit] = useForm(dispatch, signin);
+  const classes = useStyles();
 
   return (
     <>
@@ -45,16 +45,23 @@ const history = useHistory();
         </Then>
         <Else>
           <Then>
-         <Button style={{marginLeft:'170px'}}  onClick={() => {
-          dispatch(logout({ loggedIn: false, user: {} }));
-          history.push('/');
-        }} variant="contained" className={classes.sign}> Logout
-        </Button>    
+            <Button
+              style={{ marginLeft: '170px' }}
+              onClick={() => {
+                dispatch(logout({ loggedIn: false, user: {} }));
+                history.push('/');
+              }}
+              variant="contained"
+              className={classes.sign}
+            >
+              {' '}
+              Logout
+            </Button>
           </Then>
         </Else>
       </If>
     </>
-  )
+  );
 }
 
 export default Auth;
