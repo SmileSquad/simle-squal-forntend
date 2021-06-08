@@ -13,11 +13,10 @@ function Login() {
   const history = useHistory();
   const onSuccess = async (res) => {
     const data = await superagent
-      .post('http://localhost:4000/api/v1/login-google')
+      .post('https://smile-squad.herokuapp.com/api/v1/login-google')
       .send({ token: res.tokenId });
-    dispatch(login(data.body));
+    dispatch(login({ user: data.body, token: data.body.token }));
     history.push('/profile');
-    console.log('data', data.body.token);
   };
 
   const onFailure = (res) => {

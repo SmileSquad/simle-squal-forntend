@@ -18,7 +18,7 @@ function Home() {
         <Instruction />
         <Contact />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

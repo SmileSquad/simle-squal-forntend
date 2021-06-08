@@ -14,8 +14,8 @@ function Info() {
       <img src={state.user.imgUrl} alt="user" />
       <div className="username">{state.user.username}</div>
       <div className="info1">Played Games: {state.user.gamePlayed}</div>
-      <div >Win Games: {state.user.gameWin}</div>
-      <div >Win Ratio: {state.user.winRatio}</div>
+      <div>Win Games: {state.user.gameWin}</div>
+      <div>Win Ratio: {state.user.winRatio}</div>
     </div>
   );
 }

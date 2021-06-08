@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { search } from '../../store/search.js';
 import cookie from 'react-cookies';
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import { makeStyles } from '@material-ui/core/styles';
 import Popover from '@material-ui/core/Popover';
 import Typography from '@material-ui/core/Typography';
-
+import { addFriend } from '../../store/friends.js';
 import { loadCSS } from 'fg-loadcss';
 import Icon from '@material-ui/core/Icon';
 
-import './search.scss'
+import './search.scss';
 
 // profile page
 // search for a user using username.
@@ -21,16 +21,13 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(2),
     width: '430px',
   },
-  // pop: {
-  //   width: '1000px',
-  // },
   root: {
     '& > .fa': {
       margin: theme.spacing(2),
     },
   },
-  icon:{
-    marginLeft: '220px'
+  icon: {
+    marginLeft: '220px',
   },
 }));
 
@@ -41,7 +38,7 @@ function Search() {
   React.useEffect(() => {
     const node = loadCSS(
       'https://use.fontawesome.com/releases/v5.12.0/css/all.css',
-      document.querySelector('#font-awesome-css'),
+      document.querySelector('#font-awesome-css')
     );
 
     return () => {
@@ -56,34 +53,42 @@ function Search() {
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
 
-
   const [name, setName] = useState('');
   const state = useSelector((state) => {
     return {
       search: state.search,
+      user: state.auth,
     };
   });
-  console.log('search state', state);
   const dispatch = useDispatch();
   const handleChange = (e) => {
     setName(e.target.value);
   };
-
+  const token = cookie.load('auth');
   const handleSubmit = (e) => {
     e.preventDefault();
     setAnchorEl(e.currentTarget);
     e.target.reset();
-    dispatch(search(name, cookie.load('auth')));
+    dispatch(search(name, token));
   };
 
-  console.log('search', state.search);
   return (
     <div>
       <Form onSubmit={handleSubmit}>
-        <Form.Control class='searchForm input1' style={{ background: '#363636', width: 350, display: 'inline-block' }
-        } type="text" name="search" id="search" onChange={handleChange}
-          placeholder="Search by username or Email" />
-        <Button style={{ height: 43, margin: 2 }} variant="warning" type="submit">
+        <Form.Control
+          class="searchForm input1"
+          style={{ background: '#363636', width: 350, display: 'inline-block' }}
+          type="text"
+          name="search"
+          id="search"
+          onChange={handleChange}
+          placeholder="Search by username or Email"
+        />
+        <Button
+          style={{ height: 43, margin: 2 }}
+          variant="warning"
+          type="submit"
+        >
           search
         </Button>
       </Form>
@@ -105,15 +110,21 @@ function Search() {
               horizontal: 'center',
             }}
           >
-            <Typography className={classes.typography}>{el.email}
-            <Typography className={classes.icon}>
-              <Icon className="fa fa-plus-circle" fontSize="small" />
-            </Typography>
+            <Typography className={classes.typography}>
+              {el.email}
+              <Typography className={classes.icon}>
+                <Icon
+                  className="fa fa-plus-circle"
+                  fontSize="small"
+                  onClick={() => {
+                    dispatch(addFriend(el.id, state.user.user.id, token));
+                  }}
+                />
+              </Typography>
             </Typography>
           </Popover>
         );
       })}
-
     </div>
   );
 }

@@ -25,16 +25,15 @@ function Profile() {
           <Info />
           <Friends />
         </div>
-        
-        <div class="flex-col"> 
-        <Search />
-        <Posts /> 
-        <Start />
 
+        <div class="flex-col">
+          <Search />
+          <Posts />
+          <Start />
         </div>
-       
-        <div  class="flex-col">
-        <Chat />
+
+        <div class="flex-col">
+          <Chat />
         </div>
       </main>
       <Footer />
