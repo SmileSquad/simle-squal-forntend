@@ -1,0 +1,45 @@
+.instruction {
+    position: "relative";
+    height: 760px;
+    margin-top: -0.5%;
+    background-image: url("../../assets/instructions.png");
+    .title {
+      margin-left: 30px;
+      text-align: center;
+      padding-top: 7%;
+      h4 {
+        margin: 0px;
+  
+        font-size: 30px;
+        color: #f5b201;
+      }
+      p {
+        margin: 15px;
+        // margin-left: 25%;
+        color: #9e9d9d;
+        font-size: 20px;
+        width: 50%;
+      }
+    }
+    .points {
+      margin-top: 7%;
+      margin-left: 25%;
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+      align-items: center;
+      justify-items: left;
+      .point {
+        p {
+          float: right;
+          color: #9e9d9d;
+          font-size: 20px;
+          margin-bottom: 50px;
+        }
+        img {
+          position: absolute;
+          left: 17%;
+          width: 50px;
+        }
+      }
+    }
+  }
