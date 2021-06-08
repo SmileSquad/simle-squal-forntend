@@ -6,10 +6,10 @@ import google from '../../assets/google.png'
 import { Col, Form, Button } from "react-bootstrap";
 import email from '../../assets/email.png'
 import phone from '../../assets/phone.png'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import './footer.scss';
 import './contact.scss';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 // Footer goes in all pages
 // see the wireframe

@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getFriendsList } from '../../store/friends';
 import cookie from 'react-cookies';
+import './friends.scss';
+
 // Profile Page
 // get the use friends from the server
 // this will be handled usign redux
@@ -21,7 +23,21 @@ function Friends() {
     // eslint-disable-next-line
   }, [state.user]);
   console.log('state', state);
-  return <div>friend list</div>;
+  return <div class='friends'>
+    <h5>Friends</h5>
+    <div className='FriendDiv'>
+      <span class="dot"></span>
+      <p> Faten saman  </p>
+    </div>
+    <div className='FriendDiv'>
+      <span class="dot"></span>
+      <p> Raghad Mustafa </p>
+    </div>
+    <div className='FriendDiv'>
+      <span class="dot"></span>
+      <p> Ayoub .... </p>
+    </div>
+  </div>;
 }
 
 export default Friends;

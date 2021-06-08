@@ -1,0 +1,69 @@
+.imgPost{
+    width:30px;
+}
+
+.CardHeader{
+    text-align:left;
+    color:#363636;
+    font-size:15px
+}
+
+.CardBody{
+    text-align:left;
+    color:#ada794;
+    font-size:15px;
+    background :#363636;
+
+}
+
+.post{
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+}
+
+.allPost{
+    overflow: scroll;
+    height:500px;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 20px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: rgb(63, 58, 58); 
+    border-radius: 10px;
+  }
+  
+  @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+.text1{
+    border:2px solid #ffe7a4;
+}
+
+textarea{
+  height: 70px;
+  border:2px solid #ffe7a4;
+}
+
+ .postbbtn {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  width: 100px;
+  background:#ecb46a;
+  border-radius:5px;
+  border:0;
+  border:2px solid #ffe7a4;
+  cursor:pointer;
+  color:white;
+  font-size:24px;
+}

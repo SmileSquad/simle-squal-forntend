@@ -8,6 +8,8 @@ import Posts from '../components/Posts/posts.js';
 import Chat from '../components/Chat/chat.js';
 import Start from '../components/Start/start.js';
 import { useSelector } from 'react-redux';
+import './Profile.scss';
+
 function Profile() {
   const state = useSelector((state) => {
     return {
@@ -18,13 +20,22 @@ function Profile() {
     <>
       <Header />
       {console.log('user', state)}
-      <main>
-        <Info />
-        <Friends />
+      <main className="aboutUs2">
+        <div class="flex-col">
+          <Info />
+          <Friends />
+        </div>
+        
+        <div class="flex-col"> 
         <Search />
-        <Posts />
-        <Chat />
+        <Posts /> 
         <Start />
+
+        </div>
+       
+        <div  class="flex-col">
+        <Chat />
+        </div>
       </main>
       <Footer />
     </>

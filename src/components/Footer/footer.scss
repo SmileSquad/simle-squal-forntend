@@ -2,7 +2,7 @@
   display: grid;
   grid-template-rows: 4fr 1fr;
   justify-items: center;
-  align-items: end;
+  align-items:end;
   position: relative;
   bottom: 0px;
   height: 450px;
@@ -11,7 +11,7 @@
   display: grid;
   grid-template-columns: 2fr 2fr;
   justify-items: center;
-  align-items: center;
+  align-items:center;
   padding: 5px;
   position: absolute;
   width: 100%;
@@ -44,8 +44,8 @@
 }
 .socialMedia {
   position: absolute;
-  margin-top: 2.5%;
-  margin-left: -39%;
+  margin-top:2.5%;
+  margin-left:-39%;
   li {
     list-style: none;
     display: inline-block;

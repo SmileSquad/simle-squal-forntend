@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { search } from '../../store/search.js';
 import cookie from 'react-cookies';
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import './search.scss'
+
 // profile page
 // search for a user using username.
 
@@ -24,20 +28,19 @@ function Search() {
   };
   console.log('search', state);
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="search">
-          <input
-            type="text"
-            name="search"
-            id="search"
-            onChange={handleChange}
-          />
-        </label>
-        <button type="submit">search</button>
-      </form>
+    <div>
+      <Form  onSubmit={handleSubmit}> 
+          <Form.Control class= 'searchForm input1' style={{background :'#363636' , width: 350, display: 'inline-block' }
+          } type="text" name="search" id="search" onChange={handleChange}
+           placeholder="Search by username or Email" />
+        <Button style={{ height: 43, margin: 2 }} variant="warning" type="submit">
+        search
+        </Button>
+      </Form>
       <div>hello from search</div>
-    </>
+
+
+    </div>
   );
 }
 

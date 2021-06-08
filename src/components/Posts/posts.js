@@ -4,6 +4,9 @@ import { createPost } from '../../store/posts.js';
 import useForm from '../../Hooks/useForm.js';
 import cookie from 'react-cookies';
 import AllPosts from './allPost.js';
+import './posts.scss'
+
+
 // Profile Page
 // get the all posts from the server handled by redux.
 
@@ -26,22 +29,11 @@ function Posts() {
   );
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="title">
-          Title:
-          <input type="text" name="title" id="title" onChange={handleChange} />
-        </label>
-        <label htmlFor="content">
-          Content:
-          <input
-            type="text"
-            name="content"
-            id="content"
-            onChange={handleChange}
-          />
-        </label>
-        <button type="submit">Post</button>
-      </form>
+      {/* <form onSubmit={handleSubmit}>
+        <input class= 'text1' placeholder="Title" type="text" name="title" id="title" onChange={handleChange} />
+        <textarea placeholder="Content" type="text" name="content"  id="content" onChange={handleChange}></textarea>
+        <input  class='postbbtn' type="submit" value="Post" />
+      </form> */}
       <AllPosts />
     </>
   );

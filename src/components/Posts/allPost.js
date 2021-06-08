@@ -2,6 +2,9 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllPosts } from '../../store/posts.js';
 import cookie from 'react-cookies';
+import Card from 'react-bootstrap/Card'
+import man from '../../assets/man.png'
+import './posts.scss'
 
 function AllPost() {
   const state = useSelector((state) => {
@@ -19,17 +22,27 @@ function AllPost() {
     // eslint-disable-next-line
   }, []);
   return (
-    <>
+    <div className='allPost'>
       {state.post.posts.map((el, id) => {
         return (
-          <div key={id}>
-            <div>{el.user.username}</div>
-            <div>{el.title}</div>
-            <div>{el.content}</div>
-          </div>
+          <Card
+            bg='warning'
+            key={id}
+            text={el === 'light' ? 'dark' : 'white'}
+            style={{ width: '22rem' }}
+            className="mb-3 post"
+          >
+            <Card.Header className='CardHeader'> <img className="imgPost" src={man} /> {el.user.username}</Card.Header>
+            <Card.Body className='CardBody'>
+              <Card.Title  className='CardBody'>{el.title}</Card.Title>
+              <Card.Text className='CardBody'> 
+                {el.content}
+              </Card.Text>
+            </Card.Body>
+          </Card>
         );
       })}
-    </>
+    </div>
   );
 }
 
