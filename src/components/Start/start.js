@@ -11,7 +11,8 @@ function start() {
   return <div className="start">
     <img className="minion1" src={minion1} />
     <Button className= 'startBtn' variant="warning" size="lg"> START</Button>
-  </div>;
+  </div>
+
 }
 
 export default start;

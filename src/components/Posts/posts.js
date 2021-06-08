@@ -28,14 +28,14 @@ function Posts() {
     id
   );
   return (
-    <>
-      {/* <form onSubmit={handleSubmit}>
+    <div >
+      <form  class= 'mb-3 mt-4' onSubmit={handleSubmit}>
         <input class= 'text1' placeholder="Title" type="text" name="title" id="title" onChange={handleChange} />
         <textarea placeholder="Content" type="text" name="content"  id="content" onChange={handleChange}></textarea>
         <input  class='postbbtn' type="submit" value="Post" />
-      </form> */}
+      </form>
       <AllPosts />
-    </>
+    </div>
   );
 }
 

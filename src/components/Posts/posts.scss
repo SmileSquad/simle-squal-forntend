@@ -23,7 +23,7 @@
 }
 
 .allPost{
-    overflow: scroll;
+    overflow-y: scroll;
     height:500px;
 }
 
@@ -45,25 +45,31 @@
     border-radius: 10px;
   }
   
-  @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-
 .text1{
-    border:2px solid #ffe7a4;
+    border:2px solid #9e9d9d;
+    background-color: rgb(63, 58, 58);
+    width: 430px;
+    opacity: .9;
 }
 
 textarea{
+  width: 430px;
   height: 70px;
-  border:2px solid #ffe7a4;
+  background-color: #9e9d9d;
+  border:2px solid rgb(63, 58, 58);
+  opacity: .9;
 }
 
  .postbbtn {
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-  width: 100px;
-  background:#ecb46a;
+  width: 70px;
+  background:rgb(63, 58, 58);
   border-radius:5px;
-  border:0;
-  border:2px solid #ffe7a4;
+  border:2px solid rgb(63, 58, 58);
   cursor:pointer;
-  color:white;
-  font-size:24px;
+  color: #9e9d9d;
+  font-size:15px;
+  margin-left: -70px;
+  margin-top: 40px;
+  position: absolute;
+  // float:right;
 }

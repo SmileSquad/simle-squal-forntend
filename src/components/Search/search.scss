@@ -1,3 +1,14 @@
 .input1::placeholder {
     color: #f5b201;
  }
+
+  .dropdown-content {
+    position: absolute;
+    background-color: #e6e1a2;
+    min-width: 400px;
+    color: black;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    float: left;
+    z-index: 1;
+  }
