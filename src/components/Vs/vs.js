@@ -1,10 +1,14 @@
 import React from 'react';
+import './vs.scss'
 
 // Home Page
 // see the wireframe
 
 function vs() {
-  return <div>two images Try Not to Laugh / Make your Friend Laugh</div>;
+  return (
+  <div className="div">
+  </div>
+  )
 }
 
 export default vs;

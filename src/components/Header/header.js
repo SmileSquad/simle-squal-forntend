@@ -28,6 +28,7 @@ function header() {
         </li>
       </ul>
       <div className="auth">
+
         <Auth />
       </div>
     </div>

@@ -1,0 +1,50 @@
+.leaderboard {
+    position: "relative";
+    height: 750px;
+    margin-left: -2%;
+    background-image: url("../../assets/leader-bg.png");
+    .title {
+      margin-left: 30px;
+      text-align: center;
+      padding-top: 7%;
+      h4 {
+        margin: 0px;
+  
+        font-size: 30px;
+        color: #f5b201;
+      }
+      p {
+        margin: 20px;
+        color: #9e9d9d;
+        font-size: 20px;
+      }
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      grid-gap: 50px;
+      margin-left: 150px;
+      margin-top: 50px;
+  
+      .bg-dark {
+        width: 260px;
+        height: 130px;
+        .num {
+          margin-left: 22px;
+          font-size: 50px;
+          color: #f5b201;
+          float: left;
+        }
+        .wName {
+          margin-left: 80px;
+          margin-top: 10px;
+          color: #9e9d9d;
+        }
+        .wRatio {
+          margin-left: 30px;
+          color: #9e9d9d;
+        }
+      }
+    }
+  }

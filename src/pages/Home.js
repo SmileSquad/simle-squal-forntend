@@ -4,7 +4,6 @@ import Landscape from '../components/Landscape/landscape.js';
 import Leaderboard from '../components/Leaderboard/leaderboard.js';
 import Vs from '../components/Vs/vs.js';
 import Instruction from '../components/Instruction/instruction.js';
-import Contact from '../components/ContactUs/contact.js';
 import Footer from '../components/Footer/footer.js';
 
 function Home() {
@@ -16,7 +15,6 @@ function Home() {
         <Leaderboard />
         <Vs />
         <Instruction />
-        <Contact />
       </main>
       {/* <Footer /> */}
     </>
