@@ -4,7 +4,8 @@ import { login, signin, logout } from '../../store/auth.js';
 import useForm from '../../Hooks/useForm.js';
 import { If, Else, Then } from 'react-if';
 import { useHistory } from 'react-router-dom';
-import LoginGoogle from '../Google/google';
+import LoginGoogle from '../Google/google'; //.............. ما عملناها 
+
 import jwt from 'jsonwebtoken';
 import cookie from 'react-cookies';
 
@@ -142,7 +143,6 @@ function Signin() {
                                 Sign In
           </Button>
                             <Button
-                                // type="submit"
                                 fullWidth
                                 variant="contained"
                                 className={classes.submit}

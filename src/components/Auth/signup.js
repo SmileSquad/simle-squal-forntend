@@ -7,18 +7,16 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import LoginGoogle from '../Google/google'; //.............. ما عملناها 
 
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import useStyles from './style.js';
 
-//..............
 import { signup } from '../../store/auth';
 import { useDispatch } from 'react-redux';
 import useForm from '../../Hooks/useForm';
-
-
 
 // Header Components
 // signin signup authentication as a Modal/ popup with Google Auth button
