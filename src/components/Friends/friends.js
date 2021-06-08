@@ -1,25 +1,30 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getFriendsList } from '../../store/friends';
+import { getFriendsList, removeFriend, report } from '../../store/friends';
 import './friends.scss';
 
-// Profile Page
-// get the use friends from the server
-// this will be handled usign redux
-
 function Friends() {
+  const [reportState, setReport] = useState({});
   const state = useSelector((state) => {
     return { friend: state.friends, user: state.auth };
   });
   const dispatch = useDispatch();
   useEffect(() => {
-    // '60bd09a08c3e0e0015bcdf8b'
     if (state.user.user.id) {
-      dispatch(getFriendsList(state.user.user.id, state.user.token));
+      if (!state.friend.arr.length) {
+        dispatch(getFriendsList(state.user.user.id, state.user.token));
+      }
     }
     // eslint-disable-next-line
   }, [state.user]);
-  console.log('friends', state);
+  const handleChange = (e) => {
+    setReport({ ...reportState, [e.target.name]: e.target.value });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e.target.id, reportState);
+    dispatch(report(e.target.id.value, state.user.token, reportState));
+  };
   return (
     <div class="friends">
       {state.friend.arr.map((user) => {
@@ -27,6 +32,35 @@ function Friends() {
           <div className="FriendDiv">
             <span class="dot"></span>
             <p> {user.username} </p>
+            <form onSubmit={handleSubmit}>
+              <label htmlFor="message">
+                <input
+                  type="text"
+                  name="message"
+                  id="message"
+                  onChange={handleChange}
+                />
+              </label>
+              <input
+                type="text"
+                name="id"
+                id="id"
+                hidden
+                value={user.id}
+                onChange={handleChange}
+              />
+              <button type="submit">report</button>
+            </form>
+            <button
+              onClick={() => {
+                dispatch(
+                  removeFriend(user.id, state.user.user.id, state.user.token)
+                );
+              }}
+            >
+              {' '}
+              remove{' '}
+            </button>
           </div>
         );
       })}
@@ -34,19 +68,4 @@ function Friends() {
   );
 }
 
-// <div class="friends">
-//   <h5>Friends</h5>
-//   <div className="FriendDiv">
-//     <span class="dot"></span>
-//     <p> Faten saman </p>
-//   </div>
-//   <div className="FriendDiv">
-//     <span class="dot"></span>
-//     <p> Raghad Mustafa </p>
-//   </div>
-//   <div className="FriendDiv">
-//     <span class="dot"></span>
-//     <p> Ayoub .... </p>
-//   </div>
-// </div>
 export default Friends;

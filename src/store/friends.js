@@ -38,5 +38,29 @@ export const addFriend = (id1, id2, token) => async (dispatch) => {
 
   dispatch(add({ friend: response.body }));
 };
+export const removeFriend = (id1, id2, token) => async (dispatch) => {
+  const response = await superagent
+    .post(`${API}/players/removeFriend`)
+    .set('Authorization', `Bearer ${token}`)
+    .send({
+      userId: id1,
+      friendId: id2,
+    });
+  console.log('remove', response.body);
+};
+
+export const report =
+  (id, token, { message }) =>
+  async (dispatch) => {
+    try {
+      const response = await superagent
+        .post(`${API}/report/player/${id}`)
+        .set('Authorization', `Bearer ${token}`)
+        .send({ message });
+      console.log('report', response.body);
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
 
 export default friendSlice.reducer;

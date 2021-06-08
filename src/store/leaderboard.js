@@ -18,6 +18,7 @@ export const { getLeaderboard } = leaderSlice.actions;
 export const getLeaders = () => async (dispatch) => {
   try {
     const response = await superagent.get(`${API}/topPlayers`);
+    console.log('body', response.body);
     dispatch(getLeaderboard({ players: response.body }));
   } catch (error) {
     console.error(error.message);

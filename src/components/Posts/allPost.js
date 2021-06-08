@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getAllPosts } from '../../store/posts.js';
+import { deletePost, getAllPosts } from '../../store/posts.js';
 import cookie from 'react-cookies';
 import Card from 'react-bootstrap/Card';
-import man from '../../assets/man.png';
 import './posts.scss';
 
 function AllPost() {
@@ -17,7 +16,9 @@ function AllPost() {
   useEffect(() => {
     const token = cookie.load('auth');
     if (token) {
-      dispatch(getAllPosts(token));
+      if (!state.post.posts.length) {
+        dispatch(getAllPosts(token));
+      }
     }
     // eslint-disable-next-line
   }, []);
@@ -36,6 +37,18 @@ function AllPost() {
               {' '}
               <img className="imgPost" src={el.user.imgUrl} alt="user" />{' '}
               {el.user.username}
+              <button
+                onClick={() => {
+                  if (state.user.user.id === el.user.id) {
+                    dispatch(deletePost(el._id, state.user.token));
+                    // post id el._id
+                  } else {
+                    alert('you can not delete this post');
+                  }
+                }}
+              >
+                x
+              </button>
             </Card.Header>
             <Card.Body className="CardBody">
               <Card.Title className="CardBody">{el.title}</Card.Title>

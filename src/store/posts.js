@@ -42,6 +42,17 @@ export const createPost =
     );
   };
 
+export const deletePost = (id, token) => async (dispatch) => {
+  try {
+    const response = await superagent
+      .delete(`${API}/removePost/${id}`)
+      .set('Authorization', `Bearer ${token}`);
+    console.log(response.body);
+  } catch (error) {
+    console.error(error.message);
+  }
+};
+
 export const getAllPosts = (token) => async (dispatch) => {
   const response = await superagent
     .get(`${API}/posts`)
