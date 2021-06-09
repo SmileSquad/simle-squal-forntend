@@ -26,7 +26,8 @@ let faceTrigger;
 let smalT = true;
 let fakeTimer = 0;
 let winPoint = false;
-const socket = io.connect('https://api-server-ayoub.herokuapp.com/');
+const socket = io.connect('https://api-server-ayoub.herokuapp.com');
+// const socket = io.connect('http://localhost:4000');
 function Game() {
   const [me, setMe] = useState('');
   const [stream, setStream] = useState();
@@ -38,10 +39,20 @@ function Game() {
   const [name, setName] = useState('');
   const [trigger, setTrigger] = useState();
   const [room, setRoom] = useState();
+  const [client, setClient] = useState(0);
   const myVideo = useRef();
   const userVideo = useRef();
   const connectionRef = useRef();
   const history = useHistory();
+
+//   useEffect(()=>{
+//     setTimeout(() => {
+// if(client % 2===0 && !callAccepted){
+//     socket.emit("automatic")
+// } 
+// }, 3500);
+//   },)
+  
   useEffect(() => {
     navigator.mediaDevices
       .getUserMedia({ video: true, audio: true })
@@ -54,41 +65,41 @@ function Game() {
         faceapi.nets.faceExpressionNet.loadFromUri('/models');
         const video = document.getElementById('video1');
 
-        video.addEventListener('play', () => {
-          faceapi.createCanvasFromMedia(video);
-          const displaySize = { width: video.width, height: video.height };
-          setInterval(async () => {
-            const detections = await faceapi
-              .detectAllFaces(video, new faceapi.TinyFaceDetectorOptions())
-              .withFaceLandmarks()
-              .withFaceExpressions();
-            if (detections.length > 0) {
-              if (detections[0].expressions.happy > 0.8 && faceTrigger) {
-                oppPoints++;
+        // video.addEventListener('play', () => {
+        //   faceapi.createCanvasFromMedia(video);
+        //   const displaySize = { width: video.width, height: video.height };
+        //   setInterval(async () => {
+        //     const detections = await faceapi
+        //       .detectAllFaces(video, new faceapi.TinyFaceDetectorOptions())
+        //       .withFaceLandmarks()
+        //       .withFaceExpressions();
+        //     if (detections.length > 0) {
+        //       if (detections[0].expressions.happy > 0.8 && faceTrigger) {
+        //         oppPoints++;
 
-                if (oppPoints >= 3) {
-                  ////////////////Player lose
-                  socket.emit('winner');
-                  // window.location.href = 'https://www.google.com';
-                  history.push('/profile');
-                } else {
-                  //////////////////// player lose 1 point
-                  document
-                    .getElementById(`point-${oppPoints}`)
-                    .classList.add('pointOp');
-                  document.getElementById('timer').textContent = '';
-                  document.getElementById('gameStatus').classList.add('loseP');
+        //         if (oppPoints >= 3) {
+        //           ////////////////Player lose
+        //           socket.emit('winner');
+        //           // window.location.href = 'https://www.google.com';
+        //           history.push('/profile');
+        //         } else {
+        //           //////////////////// player lose 1 point
+        //           document
+        //             .getElementById(`point-${oppPoints}`)
+        //             .classList.add('pointOp');
+        //           document.getElementById('timer').textContent = '';
+        //           document.getElementById('gameStatus').classList.add('loseP');
 
-                  document.getElementById('gameStatus').textContent = 'Fail!';
-                  faceTrigger = false;
-                  console.log('happy');
-                  fakeTimer = 0;
-                  socket.emit('p2TurnL', oppPoints, yourPoints);
-                }
-              }
-            }
-          }, 100);
-        });
+        //           document.getElementById('gameStatus').textContent = 'Fail!';
+        //           faceTrigger = false;
+        //           console.log('happy');
+        //           fakeTimer = 0;
+        //           socket.emit('p2TurnL', oppPoints, yourPoints);
+        //         }
+        //       }
+        //     }
+        //   }, 100);
+        // });
       });
     socket.on('user-disconnected', () => {
       window.location = './profile';
@@ -96,6 +107,7 @@ function Game() {
     });
     socket.on('me', (id, room) => {
       setMe(id);
+      setClient()
     });
 
     socket.on('callUser', (data) => {
@@ -106,7 +118,7 @@ function Game() {
       setCallerSignal(data.signal);
       setReceivingCall(true);
     });
-    socket.on('autoCall', (room, id) => {
+    socket.on('autoCall', (room, id,client) => {
       player = 2;
       setTimeout(function aa() {
         setTrigger(id);
@@ -114,7 +126,13 @@ function Game() {
         // console.log
         // setMe(id)
         console.log(me, 'eeeee');
-      }, 2000);
+      }, 500);
+      setTimeout(() => {
+        if(client % 2===0 && !callAccepted){
+            socket.emit("automatic")
+        } 
+        }, 3500);
+      
     });
     socket.on('yourTurn', (yourPointss, oppPointss) => {
       faceTrigger = false;
@@ -260,7 +278,7 @@ function Game() {
         console.log('done 10 serc');
         c++;
       }
-    }, 3000);
+    }, 500);
   }
 
   const leaveCall = () => {

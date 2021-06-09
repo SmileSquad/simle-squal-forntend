@@ -248,7 +248,7 @@ body {
   animation-timing-function: step-end;
 }
 @keyframes animate2 {
-  0%,
+  15%,
   70% {
     color: #e00d0d;
   }
