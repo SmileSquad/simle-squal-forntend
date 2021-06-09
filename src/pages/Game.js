@@ -26,7 +26,7 @@ let faceTrigger;
 let smalT = true;
 let fakeTimer = 0;
 let winPoint = false;
-const socket = io.connect('https://api-server-ayoub.herokuapp.com');
+const socket = io.connect('https://api-server-ayoub.herokuapp.com/');
 // const socket = io.connect('http://localhost:4000');
 function Game() {
   const [me, setMe] = useState('');
