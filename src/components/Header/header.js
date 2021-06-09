@@ -37,6 +37,11 @@ function Header() {
         <li>
           <NavLink to="/About">About us</NavLink>
         </li>
+        <If condition={state.user.loggedIn}>
+          <Then>
+            <NavLink to="/game">Game</NavLink>
+          </Then>
+        </If>
       </ul>
       <div className="auth">
         <Auth />
