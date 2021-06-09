@@ -10,6 +10,7 @@ import Signup from './signup.js';
 import Button from '@material-ui/core/Button';
 import useStyles from './style.js';
 
+
 const SECRET = 'smilesquad';
 
 function Auth() {

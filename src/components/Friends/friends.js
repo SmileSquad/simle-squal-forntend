@@ -10,6 +10,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Tooltip from '@material-ui/core/Tooltip';
 import BlockIcon from '@material-ui/icons/Block';
 import Card from 'react-bootstrap/Card';
+import { If, Else, Then } from 'react-if';
 
 import './friends.scss';
 
@@ -29,6 +30,9 @@ function Friends() {
 
   const [reportState, setReport] = useState({});
   const [show, setShow] = useState(false);
+  const [evenSelected, setEvenSelected] = useState('');
+  const [block, setBlock] = useState(true);
+
 
   const state = useSelector((state) => {
     return { friend: state.friends, user: state.auth };
@@ -50,6 +54,13 @@ function Friends() {
     console.log(e.target.id, reportState);
     dispatch(report(e.target.id.value, state.user.token, reportState));
   };
+
+
+  const handleSelectL2 = (id, i) => {
+    setEvenSelected(i)
+    setShow(!show)                 
+  };
+
   return (
     <div class="friends">
       <h5>Friend</h5>
@@ -57,37 +68,65 @@ function Friends() {
 
       {state.friend.arr.map((user, id) => {
         return (
-               <div>
-              <img className="imgPost dot " src={user.imgUrl} alt="user" />{' '}
-              <p style={{ fontSize: '15px', marginTop: '3px' }}> {user.username} </p>
+          <div>
+            <Card
+              bg="dark"
+              key={id}
+              style={{ width: '22rem' }}
+              className="mb-3 post"
+            >
+              <Card.Header className="CardHeader">
 
-              <Tooltip style={{ float: 'right', marginTop: '-5px' }} title="Delete">
-                <IconButton aria-label="delete">
-                  <DeleteIcon style={{color:'#9e9d9d'}}
-                    onClick={() => {
+
+                <img className="imgPost dot " src={user.imgUrl} alt="user" />{' '}
+                <p style={{ color: 'white', fontSize: '15px', marginTop: '3px' }}> {user.username} </p>
+
+                <Tooltip style={{ float: 'right', marginTop: '-5px' }} title="Delete">
+                  <IconButton aria-label="delete">
+                    <DeleteIcon style={{ color:'#9e9d9d' }}
+                      onClick={() => {
+
+                        dispatch(
+                          removeFriend(user.id, state.user.user.id, state.user.token)
+                        );
+                      }} />
+                  </IconButton>
+                </Tooltip>
+
+
+                <If condition={block === true}>
+                  <Then>
+                    <Tooltip style={{ float: 'right', marginTop: '-5px' }} title='Report'>
+                      <IconButton aria-label="BlockIcon">
+
+
+                        <BlockIcon style={{ color: '#9e9d9d' }}
+
+                          key={id}
+                          className={
+                            evenSelected === id
+                              ? "selectedRBox"
+                              : "selectorRBox"
+                          }
+                          onClick={e => handleSelectL2(e, id)}
+                        />
                       
-                      dispatch(
-                        removeFriend(user.id, state.user.user.id, state.user.token)
-                      );
-                    }} />
-                </IconButton>
-              </Tooltip>
+                      </IconButton>
+                    </Tooltip>
 
-              <Tooltip style={{ float: 'right', marginTop: '-5px' }} title='Report'>
-                <IconButton aria-label="BlockIcon">
-                  <BlockIcon style={{color:'#9e9d9d'}} onClick={() => {
-                                          setShow(!show)
-                  }} />
-                  {show && <form  className='formClass' onSubmit={handleSubmit}>
-                    <label htmlFor="message">
-                      <input
-                        type="text"
-                        name="message"
-                        id="message"
-                        onChange={handleChange}
-                      />
-                    </label>
-                    <input
+                    <If condition={show && evenSelected === id}>
+                        <Then>
+                        <form  style={{ width:'328px' , marginLeft:'10px'}}  onSubmit={handleSubmit}>
+                        <label htmlFor="message">
+
+                            <input
+                              type="text"
+                              name="message"
+                              id="message"                              onChange={handleChange}
+                              style={{width:'328px', height:'30px'}}
+                            />
+                            </label>
+  <input
                       type="text"
                       name="id"
                       id="id"
@@ -95,66 +134,24 @@ function Friends() {
                       value={user.id}
                       onChange={handleChange}
                     />
+                          <button style={{ margin: '5px 0 5px 60px',  borderRadius:'15px', fontSize:'15px' , width:'100px'}} type="submit">Report</button>
 
-                    <button type="submit">report</button>
-                    <button onClick={() => {
-                      setShow(!show)
-                    }} >Cancel</button>
+                          <button style={{ borderRadius:'15px' , fontSize:'15px' , width:'100px'}} onClick={() => {
+                            setShow(!show)
+                            setBlock(true)                          
+                          }} >Cancel</button>
+                           
+                        </form>
+                        </Then>
 
-                  </form>}
-                </IconButton>
-              </Tooltip>
+                        </If>
+                  </Then>
+  
+                </If>
+              </Card.Header>
+            </Card>
 
-
-
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-          // <div className="FriendDiv">
-          //   <p> {user.username} </p>
-          //   <form onSubmit={handleSubmit}>
-          //     <label htmlFor="message">
-          //       <input
-          //         type="text"
-          //         name="message"
-          //         id="message"
-          //         onChange={handleChange}
-          //       />
-          //     </label>
-          //     <input
-          //       type="text"
-          //       name="id"
-          //       id="id"
-          //       hidden
-          //       value={user.id}
-          //       onChange={handleChange}
-          //     />
-          //     <button type="submit">report</button>
-          //   </form>
-
-
-
-          //   <button
-          //     onClick={() => {
-          //       dispatch(
-          //         removeFriend(user.id, state.user.user.id, state.user.token)
-          //       );
-          //     }}
-          //   >
-          //     {' '}
-          //     remove{' '}
-          //   </button>
-
-          // </div>
+          </div>
         );
       })}
     </div>

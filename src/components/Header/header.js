@@ -40,7 +40,7 @@ function Header() {
         <li>
           <NavLink to="/About">About us</NavLink>
         </li>
-        <If condition={state.user.loggedIn}>
+        {/* <If condition={state.user.loggedIn}>
           <Then>
             <NavLink
               to="/game"
@@ -51,7 +51,7 @@ function Header() {
               Game
             </NavLink>
           </Then>
-        </If>
+        </If> */}
       </ul>
       <div className="auth">
         <Auth />

@@ -1,6 +1,7 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
-import minion1 from '../../assets/minion1.png';
+import minion1 from '../../assets/minionstart.png';
 
 import './start.scss';
 
@@ -9,11 +10,10 @@ import './start.scss';
 
 function start() {
   return (
-    <div className="start">
+    <div className="startGame1">
       <img className="minion1" src={minion1} alt="minions" />
       <Button className="startBtn" variant="warning" size="lg">
-        {' '}
-        START
+      <NavLink className="gameNav" to="/game">START</NavLink>
       </Button>
     </div>
   );
