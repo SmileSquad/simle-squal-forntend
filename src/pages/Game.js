@@ -1,8 +1,5 @@
 import Button from '@material-ui/core/Button';
-// import IconButton from "@material-ui/core/IconButton"
-// import TextField from "@material-ui/core/TextField"
-// import AssignmentIcon from "@material-ui/icons/Assignment"
-// import PhoneIcon from "@material-ui/icons/Phone"
+import { useSelector } from 'react-redux';
 import React, { useEffect, useRef, useState } from 'react';
 import minion from '../assets/menion.png';
 // import { CopyToClipboard } from "react-copy-to-clipboard"
@@ -15,7 +12,7 @@ import titles from '../assets/titles.png';
 import badge from '../assets/badge.png';
 import { useHistory } from 'react-router-dom';
 import './game.css';
-
+let socketTrigger = true;
 let c = 0;
 let bool = true;
 let player = 1;
@@ -26,9 +23,16 @@ let faceTrigger;
 let smalT = true;
 let fakeTimer = 0;
 let winPoint = false;
-const socket = io.connect('https://api-server-ayoub.herokuapp.com/');
+let socket;
 function Game() {
+  const state = useSelector((state) => {
+    return {
+      auth: state.auth,
+    };
+  });
+  // let socket = io.connect('https://api-server-ayoub.herokuapp.com/');
   const [me, setMe] = useState('');
+  // const [socket, setSocket] = useState();
   const [stream, setStream] = useState();
   const [receivingCall, setReceivingCall] = useState(false);
   const [caller, setCaller] = useState('');
@@ -42,7 +46,12 @@ function Game() {
   const userVideo = useRef();
   const connectionRef = useRef();
   const history = useHistory();
+  if (socketTrigger) {
+    socket = io.connect('https://api-server-ayoub.herokuapp.com/');
+    socketTrigger = false;
+  }
   useEffect(() => {
+    // setSocket(io.connect('https://api-server-ayoub.herokuapp.com/'));
     navigator.mediaDevices
       .getUserMedia({ video: true, audio: true })
       .then((stream) => {
@@ -341,6 +350,11 @@ function Game() {
       }, 1000);
     }
   }
+  useEffect(() => {
+    return () => {
+      socket.disconnect();
+    };
+  }, []);
   return (
     <div className="game-body">
       {callAccepted ? gameStart() : null}

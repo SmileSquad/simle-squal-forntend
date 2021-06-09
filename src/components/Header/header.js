@@ -1,5 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { socket } from '../../store/auth.js';
 import Auth from '../Auth/auth.js';
 import './header.scss';
 import logo from '../../assets/yellowlogo.png';
@@ -10,6 +12,7 @@ import { useSelector } from 'react-redux';
 // the auth should be included
 
 function Header() {
+  const dispatch = useDispatch();
   const state = useSelector((state) => {
     return {
       user: state.auth,
@@ -39,7 +42,14 @@ function Header() {
         </li>
         <If condition={state.user.loggedIn}>
           <Then>
-            <NavLink to="/game">Game</NavLink>
+            <NavLink
+              to="/game"
+              onClick={() => {
+                dispatch(socket());
+              }}
+            >
+              Game
+            </NavLink>
           </Then>
         </If>
       </ul>

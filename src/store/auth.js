@@ -9,6 +9,7 @@ const API = 'https://smile-squad.herokuapp.com/api/v1';
 const authSlice = createSlice({
   name: 'auth',
   initialState: {
+    trigger: false,
     loggedIn: false,
     user: {},
     token: '',
@@ -26,10 +27,16 @@ const authSlice = createSlice({
       state.token = '';
       cookie.remove('auth');
     },
+    socket: (state, action) => {
+      state.trigger = true;
+    },
+    socketEnd: (state, action) => {
+      state.trigger = false;
+    },
   },
 });
 
-export const { login, logout } = authSlice.actions;
+export const { login, logout, socket, socketEnd } = authSlice.actions;
 
 export const signin =
   ({ username, password }) =>
