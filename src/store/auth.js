@@ -27,6 +27,9 @@ const authSlice = createSlice({
       state.token = '';
       cookie.remove('auth');
     },
+    update: (state, action) => {
+      state.user.win += 1;
+    },
     socket: (state, action) => {
       state.trigger = true;
     },
@@ -36,7 +39,7 @@ const authSlice = createSlice({
   },
 });
 
-export const { login, logout, socket, socketEnd } = authSlice.actions;
+export const { login, logout, socket, socketEnd, update } = authSlice.actions;
 
 export const signin =
   ({ username, password }) =>
@@ -58,5 +61,15 @@ export const signup =
       console.error(error.message);
     }
   };
+
+// export const updateUser = (id, token, body) => async (dispatch) => {
+//   try {
+//     const response = await superagent
+//       .post(`${API}/signup`)
+//       .send({ win: body.win });
+//   } catch (error) {
+//     console.error(error.message);
+//   }
+// };
 
 export default authSlice.reducer;

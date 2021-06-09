@@ -16,10 +16,13 @@ const friendSlice = createSlice({
     add: (state, action) => {
       state.arr.push(action.payload.friend[0]);
     },
+    remove: (state, action) => {
+      state.arr.filter((el) => el.id !== action.payload.user.id);
+    },
   },
 });
 
-export const { getFriends, add } = friendSlice.actions;
+export const { getFriends, add, remove } = friendSlice.actions;
 
 export const getFriendsList = (id, token) => async (dispatch) => {
   const response = await superagent
@@ -46,6 +49,7 @@ export const removeFriend = (id1, id2, token) => async (dispatch) => {
       userId: id1,
       friendId: id2,
     });
+  dispatch(remove({ user: response.body[0] }));
   console.log('remove', response.body);
 };
 

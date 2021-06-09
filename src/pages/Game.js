@@ -1,5 +1,6 @@
 import Button from '@material-ui/core/Button';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import {update} from '../store/auth';
 import React, { useEffect, useRef, useState } from 'react';
 import minion from '../assets/menion.png';
 // import { CopyToClipboard } from "react-copy-to-clipboard"
@@ -25,6 +26,7 @@ let fakeTimer = 0;
 let winPoint = false;
 let socket;
 function Game() {
+  const dispatch = useDispatch();
   const state = useSelector((state) => {
     return {
       auth: state.auth,
@@ -205,6 +207,7 @@ function Game() {
       console.log('you win');
       window.location = './profile';
       // history.push('/profile');
+      dispatch(update());
     });
   }, []);
 
