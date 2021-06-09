@@ -4,6 +4,9 @@ import { deletePost, getAllPosts } from '../../store/posts.js';
 import cookie from 'react-cookies';
 import Card from 'react-bootstrap/Card';
 import './posts.scss';
+import DeleteIcon from '@material-ui/icons/Delete';
+import Tooltip from '@material-ui/core/Tooltip';
+import IconButton from '@material-ui/core/IconButton';
 
 function AllPost() {
   const state = useSelector((state) => {
@@ -27,7 +30,7 @@ function AllPost() {
       {state.post.posts.map((el, id) => {
         return (
           <Card
-            bg="warning"
+            bg="white"
             key={id}
             text={el === 'light' ? 'dark' : 'white'}
             style={{ width: '22rem' }}
@@ -37,18 +40,22 @@ function AllPost() {
               {' '}
               <img className="imgPost" src={el.user.imgUrl} alt="user" />{' '}
               {el.user.username}
-              <button
-                onClick={() => {
-                  if (state.user.user.id === el.user.id) {
-                    dispatch(deletePost(el._id, state.user.token));
-                    // post id el._id
-                  } else {
-                    alert('you can not delete this post');
-                  }
-                }}
-              >
-                x
-              </button>
+
+              <Tooltip style={{ float: 'right' , marginTop: '-5px'}} title="Delete">
+                <IconButton aria-label="delete">
+                  <DeleteIcon 
+                    onClick={() => {
+                      if (state.user.user.id === el.user.id) {
+                        dispatch(deletePost(el._id, state.user.token));
+                        // post id el._id
+                      } else {
+                        alert('you can not delete this post');
+                      }
+                    }} />
+                </IconButton>
+              </Tooltip>
+
+
             </Card.Header>
             <Card.Body className="CardBody">
               <Card.Title className="CardBody">{el.title}</Card.Title>

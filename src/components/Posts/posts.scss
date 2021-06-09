@@ -1,5 +1,6 @@
 .imgPost{
     width:30px;
+    border-radius: 50%;
 }
 
 .CardHeader{
@@ -13,7 +14,6 @@
     color:#ada794;
     font-size:15px;
     background :#363636;
-
 }
 
 .post{
@@ -27,12 +27,8 @@
     height:500px;
 }
 
-::-webkit-scrollbar {
-    width: 20px;
-  }
-
   ::-webkit-scrollbar {
-    width: 20px;
+    width: 10px;
   }
   
   ::-webkit-scrollbar-track {
@@ -41,21 +37,21 @@
   }
    
   ::-webkit-scrollbar-thumb {
-    background: rgb(63, 58, 58); 
+    background: #9e9d9d; 
     border-radius: 10px;
   }
   
 .text1{
     border:2px solid #9e9d9d;
-    background-color: rgb(63, 58, 58);
-    width: 430px;
+    background-color: #ffffff;
+    width: 355px;
     opacity: .9;
 }
 
 textarea{
-  width: 430px;
-  height: 70px;
-  background-color: #9e9d9d;
+  width: 355px;
+  height: 100px;
+  background-color: #ffffff;
   border:2px solid rgb(63, 58, 58);
   opacity: .9;
 }
@@ -68,8 +64,12 @@ textarea{
   cursor:pointer;
   color: #9e9d9d;
   font-size:15px;
-  margin-left: -70px;
-  margin-top: 40px;
+  margin-left: -74px;
+  margin-top: 67px;
   position: absolute;
   // float:right;
+}
+
+.card-header{
+  padding: 0px ;
 }

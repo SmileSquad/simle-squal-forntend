@@ -4,12 +4,10 @@
 }
 
 .dot {
-    height: 15px;
-    width: 15px;
-    background-color: #f5b201;
     border-radius: 50%;
     display: inline-block;
     margin-right: 10px;
+    width:30px;
   }
 
   p {
@@ -23,3 +21,9 @@
      text-align: left;
      margin-left: 150px;
   }
+
+  .CardHeader{
+   text-align:left;
+   color:#ffffff;
+   font-size:20px
+}

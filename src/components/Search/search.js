@@ -27,7 +27,8 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   icon: {
-    marginLeft: '220px',
+    // marginLeft: '380px',
+    float: 'right'
   },
 }));
 
@@ -77,16 +78,16 @@ function Search() {
       <Form onSubmit={handleSubmit}>
         <Form.Control
           class="searchForm input1"
-          style={{ background: '#363636', width: 350, display: 'inline-block' }}
+          style={{ background: '#fff', width: '100%', display: 'inline-block',position:'relative' }}
           type="text"
           name="search"
           id="search"
           onChange={handleChange}
           placeholder="Search by username or Email"
         />
-        <Button
-          style={{ height: 43, margin: 2 }}
-          variant="warning"
+        <Button className="to-be-changed"
+          // style={{ height: 43, margin: 2 }}
+          // variant="warning"
           type="submit"
         >
           search
@@ -111,7 +112,7 @@ function Search() {
             }}
           >
             <Typography className={classes.typography}>
-              {el.email}
+              {el.username}
               <Typography className={classes.icon}>
                 <Icon
                   className="fa fa-plus-circle"
