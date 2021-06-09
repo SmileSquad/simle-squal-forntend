@@ -90,7 +90,7 @@ body {
   font-family: 'digital-clock-font';
   position: absolute;
   left: 838px;
-  top: -484px;
+  top: -465px;
   font-size: 37px;
   color: #29dd01;
 }
@@ -99,7 +99,7 @@ body {
   color: #e00d0d;
   position: absolute;
   left: 885px;
-  top: -406px;
+  top: -396px;
   font-size: 25px;
 }
 #gameSession {
@@ -109,7 +109,7 @@ body {
   font-family: 'digital-clock-font';
   position: absolute;
   left: 863px;
-  top: -484px;
+  top: -465px;
   font-size: 37px;
   color: #29dd01;
 }
@@ -126,7 +126,7 @@ body {
   font-family: 'digital-clock-font';
   position: absolute;
   left: 874px;
-  top: -484px;
+  top: -465px;
   font-size: 37px;
   color: #29dd01;
   line-height: 55px;

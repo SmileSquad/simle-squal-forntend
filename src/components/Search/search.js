@@ -27,8 +27,9 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   icon: {
+    cursor:'pointer',
     // marginLeft: '380px',
-    float: 'right'
+    float: 'right',
   },
 }));
 

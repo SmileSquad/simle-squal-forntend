@@ -1,5 +1,16 @@
 import Image from '../../assets/signin.png';
 import { makeStyles } from '@material-ui/core/styles';
+import './auth.scss';
+const font = ' "Trocchi", serif';
+// const theme = createMuiTheme({
+//   typography: {
+//     fontFamily: font,
+//     button: 
+//       textTransform: "none"
+//     }
+//   }
+// });
+
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -61,13 +72,17 @@ const useStyles = makeStyles((theme) => ({
     fontWeight: 'bold',
   },
   sign: {
-    maxWidth: '70px',
+    maxWidth: '90px',
+    maxHeight: '40px',
     '&:hover': {
       backgroundColor: '#0f0f0f',
       color: theme.palette.warning.main,
       border: '1px solid #f5b201',
     },
+
     backgroundColor: theme.palette.warning.main,
+    fontSize: 15,
+    // fontWeight: 'bold', 
   },
 
   Typography: {
