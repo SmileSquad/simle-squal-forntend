@@ -107,7 +107,7 @@ function Game() {
     });
     socket.on('me', (id, room) => {
       setMe(id);
-      setClient()
+      console.log("in 1")
     });
 
     socket.on('callUser', (data) => {
