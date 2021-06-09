@@ -75,10 +75,9 @@ function Signup() {
                 id="name"
                 name="username"
                 onChange={handleChange}
-                label="name"
                 // autoComplete="name"
                 // autoFocus
-                placeholder="username"
+                placeholder="Username"
                 className={classes.textField}
                 InputProps={{
                   className: classes.input,
@@ -107,6 +106,8 @@ function Signup() {
                 margin="normal"
                 required
                 fullWidth
+                placeholder="Password"
+
                 name="password"
                 type="password"
                 id="password"

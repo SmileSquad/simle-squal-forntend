@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { login, signin, logout } from '../../store/auth.js';
-import useForm from '../../Hooks/useForm.js';
+import { login, logout } from '../../store/auth.js';
 import { If, Else, Then } from 'react-if';
 import { useHistory } from 'react-router-dom';
-import LoginGoogle from '../Google/google';
 import jwt from 'jsonwebtoken';
 import cookie from 'react-cookies';
 import Signin from './signin.js';
@@ -33,7 +31,6 @@ function Auth() {
 
   const history = useHistory();
   const { loggedIn } = state.user;
-  const [, handleChange, handleSubmit] = useForm(dispatch, signin);
   const classes = useStyles();
 
   return (

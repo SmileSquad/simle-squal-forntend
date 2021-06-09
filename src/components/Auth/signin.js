@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { login, signin, logout } from '../../store/auth.js';
+import { useDispatch } from 'react-redux';
+import { login, signin } from '../../store/auth.js';
 import useForm from '../../Hooks/useForm.js';
-import { If, Else, Then } from 'react-if';
 import { useHistory } from 'react-router-dom';
 import LoginGoogle from '../Google/google'; //.............. ما عملناها
 
@@ -30,12 +29,6 @@ const SECRET = 'smilesquad';
 function Signin() {
   const dispatch = useDispatch();
 
-  const state = useSelector((state) => {
-    return {
-      user: state.auth,
-    };
-  });
-
   useEffect(() => {
     const token = cookie.load('auth');
     if (token) {
@@ -46,7 +39,6 @@ function Signin() {
   }, []);
 
   const history = useHistory();
-  const { loggedIn } = state.user;
   const [, handleChange, handleSubmit] = useForm(dispatch, signin);
 
   const classes = useStyles();

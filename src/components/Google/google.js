@@ -3,6 +3,8 @@ import superagent from 'superagent';
 import { useDispatch } from 'react-redux';
 import { login } from '../../store/auth.js';
 import { useHistory } from 'react-router-dom';
+import GoogleButton from 'react-google-button'
+
 import { GoogleLogin } from 'react-google-login';
 
 const clientId =
@@ -27,15 +29,17 @@ function Login() {
     <div>
       <GoogleLogin
         clientId={clientId}
+        render={renderProps => (
+          <GoogleButton style={{ width: '100%' }} onClick={renderProps.onClick} disabled={renderProps.disabled}>Sign in with Google</GoogleButton>
+        )}
         buttonText="Login"
         onSuccess={onSuccess}
         onFailure={onFailure}
         cookiePolicy={'single_host_origin'}
-        style={{ marginTop: '100px' }}
-        // isSignedIn={true}
+        style={{ marginTop: '10px' }}
+      // isSignedIn={true}
       />
     </div>
   );
 }
-
 export default Login;
