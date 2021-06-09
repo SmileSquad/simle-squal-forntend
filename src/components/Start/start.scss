@@ -9,10 +9,27 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    // background-color: #0f0f0f;
 
 }
 
-.start{
+.startGame1{
     position: relative;
     height: 280px ;
+    // z-index: 1000;
+}
+
+.gameNav {
+    text-decoration: none;
+    color:#363636;
+  }
+
+  .gameNav:hover {
+    text-decoration: none;
+    color:#f5b201;
+  }
+
+  .startBtn:hover{
+    background-color: #0f0f0f;
+    border: 1px solid #f5b201;
 }
