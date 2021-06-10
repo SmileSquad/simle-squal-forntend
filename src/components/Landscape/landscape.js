@@ -44,7 +44,7 @@ function Landscape() {
     <>
       <section className={classes.root}>
         <ReactPlayer
-          url={'https://media.w3.org/2010/05/sintel/trailer_hd.mp4'}
+          url={'https://streamable.com/z628um'}
           playing
           loop
           muted
@@ -60,9 +60,9 @@ function Landscape() {
             alignItems="center"
             color="#fff"
           >
-            <Typography variant="h3" component="h1" className={classes.title}>
+            {/* <Typography variant="h3" component="h1" className={classes.title}>
               SMiLE SQuAD
-          </Typography>
+          </Typography> */}
           </Box>
         </div>
       </section>

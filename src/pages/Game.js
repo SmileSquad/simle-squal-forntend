@@ -1,6 +1,6 @@
 import Button from '@material-ui/core/Button';
 import { useSelector, useDispatch } from 'react-redux';
-import {update} from '../store/auth';
+import { update } from '../store/auth';
 import React, { useEffect, useRef, useState } from 'react';
 import minion from '../assets/menion.png';
 // import { CopyToClipboard } from "react-copy-to-clipboard"
@@ -53,6 +53,12 @@ function Game() {
     socketTrigger = false;
   }
   useEffect(() => {
+    // let style = {
+    //   backgroundImage: `url(../assets/last.gif)`,
+    //   backgroundRepeat: "no-repeat",
+    //   backgroundSize: "cover",
+    // }
+    document.getElementById('bodyApp').classList.add("bodyG")
     // setSocket(io.connect('https://api-server-ayoub.herokuapp.com/'));
     navigator.mediaDevices
       .getUserMedia({ video: true, audio: true })
@@ -355,6 +361,8 @@ function Game() {
   }
   useEffect(() => {
     return () => {
+      document.getElementById('bodyApp').removeAttribute("class")
+
       socket.disconnect();
     };
   }, []);
