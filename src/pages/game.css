@@ -1,14 +1,20 @@
 @font-face {
-  font-family: 'digital-clock-font';
-  src: local('Digital Numbers Regular'),
-    url('DigitalNumbers-Regular.woff') format('woff');
+  font-family: "digital-clock-font";
+  src: local("Digital Numbers Regular"),
+    url("DigitalNumbers-Regular.woff") format("woff");
 }
 /**{*/
 /*    transition: 0.7s ease-in-out;*/
 /*}*/
 body {
+  /* margin-bottom:; */
   height: 100%;
-  background-image: url('../assets/last\ \(2\).gif');
+  /* background-image: url('../assets/last\ \(2\).gif');
+  background-repeat: no-repeat; */
+  /* background-size: cover; */
+}
+.bodyG {
+  background-image: url("../assets/last.gif");
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -87,7 +93,7 @@ body {
   width: 100px;
 }
 .waiting {
-  font-family: 'digital-clock-font';
+  font-family: "digital-clock-font";
   position: absolute;
   left: 838px;
   top: -465px;
@@ -95,7 +101,7 @@ body {
   color: #29dd01;
 }
 .timing {
-  font-family: 'digital-clock-font';
+  font-family: "digital-clock-font";
   color: #e00d0d;
   position: absolute;
   left: 885px;
@@ -106,7 +112,7 @@ body {
   position: absolute;
 }
 .start {
-  font-family: 'digital-clock-font';
+  font-family: "digital-clock-font";
   position: absolute;
   left: 863px;
   top: -465px;
@@ -114,7 +120,7 @@ body {
   color: #29dd01;
 }
 .next {
-  font-family: 'digital-clock-font';
+  font-family: "digital-clock-font";
   position: absolute;
   left: 876px;
   top: -494px;
@@ -123,7 +129,7 @@ body {
   line-height: 57px;
 }
 .your {
-  font-family: 'digital-clock-font';
+  font-family: "digital-clock-font";
   position: absolute;
   left: 874px;
   top: -465px;
@@ -132,7 +138,7 @@ body {
   line-height: 55px;
 }
 .yourA {
-  font-family: 'digital-clock-font';
+  font-family: "digital-clock-font";
   position: absolute;
   left: 850px;
   top: -475px;
@@ -140,7 +146,7 @@ body {
   color: #c6c131;
 }
 .opp {
-  font-family: 'digital-clock-font';
+  font-family: "digital-clock-font";
   position: absolute;
   left: 852px;
   top: -477px;
@@ -148,7 +154,7 @@ body {
   color: #c6c131;
 }
 .timerPlayer {
-  font-family: 'digital-clock-font';
+  font-family: "digital-clock-font";
   color: #e00d0d;
   position: absolute;
   left: 914px;
@@ -156,7 +162,7 @@ body {
   font-size: 30px;
 }
 .winP {
-  font-family: 'digital-clock-font';
+  font-family: "digital-clock-font";
   position: absolute;
   left: 825px;
   top: -464px;
@@ -166,7 +172,7 @@ body {
   animation-timing-function: step-end;
 }
 .loseP {
-  font-family: 'digital-clock-font';
+  font-family: "digital-clock-font";
   position: absolute;
   left: 861px;
   top: -470px;
@@ -178,7 +184,7 @@ body {
   opacity: 0.3;
 }
 #empty {
-  background-image: url('../assets/menion (1).png');
+  background-image: url("../assets/menion (1).png");
 }
 /*//-- effect*/
 .waiting {
@@ -187,7 +193,7 @@ body {
   /*-webkit-box-reflect:below 1px linear-gradient(transparent,black);*/
   outline: none;
   animation: animate 1.2s linear infinite;
-  font-family: 'digital-clock-font';
+  font-family: "digital-clock-font";
   animation-timing-function: step-end;
 }
 @keyframes animate3 {
@@ -222,7 +228,7 @@ body {
   /*-webkit-box-reflect:below 1px linear-gradient(transparent,black);*/
   outline: none;
   animation: animate1 1.2s linear infinite;
-  font-family: 'digital-clock-font';
+  font-family: "digital-clock-font";
   animation-timing-function: step-end;
 }
 @keyframes animate1 {
@@ -244,7 +250,7 @@ body {
   /*-webkit-box-reflect:below 1px linear-gradient(transparent,black);*/
   outline: none;
   animation: animate2 1s linear infinite;
-  font-family: 'digital-clock-font';
+  font-family: "digital-clock-font";
   animation-timing-function: step-end;
 }
 @keyframes animate2 {
