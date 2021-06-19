@@ -11,7 +11,7 @@ const font = "'Trocchi', serif";
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
-    height: '90vh',
+    height: '762px',
     position: 'relative',
     '& video': {
       objectFit: 'cover',
@@ -41,18 +41,6 @@ function Landscape() {
 
   const classes = useStyles();
 
-
-  useEffect(() => {
-    setTimeout(() => {
-      var iframe = document.getElementById('video11').firstChild;
-      var element = iframe.contentWindow.document.querySelector('.media-container');
-      console.log('...........', element)
-    }, 3000)
-
-  }, []);
-
-
-
   return (
     <>
       <section className={classes.root}>
@@ -63,11 +51,10 @@ function Landscape() {
           muted
           width="1366px"
           height="768px"
-          id='video11'
         />
         <div className={classes.overlay}>
           <Box
-            height="110%"
+            height="762px"
             display="flex"
             flexDirection="column"
             justifyContent="center"
