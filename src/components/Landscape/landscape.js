@@ -11,7 +11,7 @@ const font = "'Trocchi', serif";
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
-    height: '762px',
+    height: '768px',
     position: 'relative',
     '& video': {
       objectFit: 'cover',
