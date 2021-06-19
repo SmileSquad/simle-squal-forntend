@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './landscape.scss';
 import ReactPlayer from "react-player";
 import { makeStyles } from '@material-ui/core/styles';
@@ -40,6 +40,19 @@ const useStyles = makeStyles(theme => ({
 function Landscape() {
 
   const classes = useStyles();
+
+
+  useEffect(() => {
+    setTimeout(() => {
+      var iframe = document.getElementById('video11').firstChild;
+      var element = iframe.contentWindow.document.querySelector('.media-container');
+      console.log('...........', element)
+    }, 3000)
+
+  }, []);
+
+
+
   return (
     <>
       <section className={classes.root}>
@@ -48,8 +61,9 @@ function Landscape() {
           playing
           loop
           muted
-          width="100%"
-          height="100%"
+          width="1366px"
+          height="768px"
+          id='video11'
         />
         <div className={classes.overlay}>
           <Box
